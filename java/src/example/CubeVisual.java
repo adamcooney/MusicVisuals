@@ -8,7 +8,7 @@ public class CubeVisual extends Visual
 
     public void settings()
     {
-        size(800, 800, P3D);
+        size(600, 600, P3D);
         println("CWD: " + System.getProperty("user.dir"));
         //fullScreen(P3D, SPAN);
     }
@@ -36,7 +36,7 @@ public class CubeVisual extends Visual
         setFrameSize(256);
 
         startMinim();
-        loadAudio("heroplanet.mp3");
+        loadAudio("technomyecho.mp3");
         //getAp().play();
         //startListening(); 
         
