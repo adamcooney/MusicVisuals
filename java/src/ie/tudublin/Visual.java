@@ -34,7 +34,7 @@ public abstract class Visual extends PApplet
 
 	}
 
-	float log2(float f) {
+	float log2(final float f) {
 		return log(f) / log(2.0f);
 	}
 
@@ -66,9 +66,9 @@ public abstract class Visual extends PApplet
 
 	protected void calculateFrequencyBands() {
 		for (int i = 0; i < bands.length; i++) {
-			int start = (int) pow(2, i) - 1;
-			int w = (int) pow(2, i);
-			int end = start + w;
+			final int start = (int) pow(2, i) - 1;
+			final int w = (int) pow(2, i);
+			final int end = start + w;
 			float average = 0;
 			for (int j = start; j < end; j++) {
 				average += fft.getBand(j) * (j + 1);
@@ -85,7 +85,7 @@ public abstract class Visual extends PApplet
 		ab = ai.left;
 	}
 
-	public void loadAudio(String filename)
+	public void loadAudio(final String filename)
 	{
 		ap = minim.loadFile(filename, frameSize);
 		ab = ap.left;
@@ -95,7 +95,7 @@ public abstract class Visual extends PApplet
 		return frameSize;
 	}
 
-	public void setFrameSize(int frameSize) {
+	public void setFrameSize(final int frameSize) {
 		this.frameSize = frameSize;
 	}
 
@@ -103,7 +103,7 @@ public abstract class Visual extends PApplet
 		return sampleRate;
 	}
 
-	public void setSampleRate(int sampleRate) {
+	public void setSampleRate(final int sampleRate) {
 		this.sampleRate = sampleRate;
 	}
 
@@ -139,4 +139,5 @@ public abstract class Visual extends PApplet
 	public AudioPlayer getAudioPlayer() {
 		return ap;
 	}
+
 }
