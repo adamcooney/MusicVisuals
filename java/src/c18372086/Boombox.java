@@ -88,7 +88,7 @@ public class Boombox extends Visual
         sphere(smoothedBoxSize);
         popMatrix();
 
-        //changes size depending on amplitute
+        //changes size depending on amplitude
         float boxSize = 85 + (getAmplitude() * 25);
         smoothedBoxSize = lerp(smoothedBoxSize, boxSize, 0.3f);
 
