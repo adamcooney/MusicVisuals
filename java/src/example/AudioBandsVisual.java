@@ -1,9 +1,10 @@
 package example;
 
 import processing.core.*;
+import ie.tudublin.Visual;
 
 // This is an example of a visual that uses the audio bands
-public class AudioBandsVisual
+public class AudioBandsVisual extends Visual
 {
     MyVisual mv;
 
