@@ -22,9 +22,6 @@ public class SpiralSpeaker extends Visual
 
     FFT fft;
 
-	int numLines = 100;
-	float[] freqSpikes = new float[numLines];
-
 	public void settings()
 	{
 		fullScreen(P3D, SPAN);
@@ -56,6 +53,9 @@ public class SpiralSpeaker extends Visual
     float py = 0;
     float cz = 0;
     float pz = 0;
+	
+	int numLines = 100;
+	float[] freqSpikes = new float[numLines];
 
     public void draw()
     {	
@@ -76,9 +76,8 @@ public class SpiralSpeaker extends Visual
             for(int i = 0 ; i < numLines ; i ++)
             {
                 theta = map(i, 0, numLines, 0, TWO_PI);
-                strokeWeight(5);
-                float c = map(i,0,numLines,0,255); 
-                stroke(c, 255, 255);
+                strokeWeight(5); 
+                stroke(map(i,0,numLines,0,255), 255, 255);
                 freqSpikes[i] = lerp(freqSpikes[i], fft.getBand(i), 0.2f);
                 cz = (cos(theta) * radius) - width;
                 pz = (cos(theta) * radius) - width;
